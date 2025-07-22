@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://da7sgtverlwx1"]
+
+[ext_resource type="Texture2D" uid="uid://5a5d157pnxnj" path="res://assets/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="1_hlflk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbppy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ish"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu3fn"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s22pc"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00wdm"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km025"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cful"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkeub"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y125t"]
+atlas = ExtResource("1_hlflk")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p25e8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ish")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu3fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s22pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00wdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km025")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cful")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkeub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y125t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Corte" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dbppy")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p25e8")
+autoplay = "default"
+frame_progress = 0.615423

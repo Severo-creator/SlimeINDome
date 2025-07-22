@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctvyq01vmvhlf"]
+
+[ext_resource type="Texture2D" uid="uid://20cwwxn87bs" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="1_j1e61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77y5k"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ggcp"]
+atlas = ExtResource("1_j1e61")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6tgo"]
+atlas = ExtResource("1_j1e61")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djf7i"]
+atlas = ExtResource("1_j1e61")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqgkg"]
+atlas = ExtResource("1_j1e61")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52wxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ggcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6tgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djf7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqgkg")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_77y5k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_52wxk")
+animation = &"coin"
+frame_progress = 0.106743

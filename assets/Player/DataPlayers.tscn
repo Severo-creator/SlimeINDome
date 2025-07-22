@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bax7d12lvt6hn"]
+
+[ext_resource type="Script" path="res://assets/Scripts/DataPlayers.gd" id="1_xkorj"]
+
+[node name="DataPlayers" type="Node2D"]
+script = ExtResource("1_xkorj")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://vqi8y4htm41y"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Classes/Mago/Skills/Explosao/ExplosaoTiming.gd" id="1_ibhes"]
+[ext_resource type="Texture2D" uid="uid://de2u0j1p337t" path="res://assets/Mini FX, Items & UI/Effects/Explosion_Poof (16 x 16).png" id="1_nkw33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc7bn"]
+size = Vector2(20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krur4"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ija"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o26sl"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdp8u"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nyg4"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtmwl"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tvsc"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fwm2"]
+atlas = ExtResource("1_nkw33")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vo0oe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krur4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ija")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o26sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdp8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nyg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtmwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tvsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fwm2")
+}],
+"loop": true,
+"name": &"Boom",
+"speed": 15.0
+}]
+
+[node name="Explosao" type="CharacterBody2D"]
+script = ExtResource("1_ibhes")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bc7bn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 0.625)
+sprite_frames = SubResource("SpriteFrames_vo0oe")
+animation = &"Boom"
+autoplay = "Boom"
+frame_progress = 0.692896

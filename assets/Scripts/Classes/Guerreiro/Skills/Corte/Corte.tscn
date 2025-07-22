@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4m0acy71it2h"]
+
+[ext_resource type="Texture2D" uid="uid://x62bh33ygxpa" path="res://assets/Sprites autorais/golpes/sword-sheet.png" id="1_fhcdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbppy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkbsr"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65d6u"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njas1"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly7h5"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5bu3"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f64vr"]
+atlas = ExtResource("1_fhcdu")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p25e8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkbsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65d6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njas1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly7h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5bu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f64vr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Corte" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dbppy")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.0220513, -0.0185055)
+scale = Vector2(-0.431769, 0.412253)
+sprite_frames = SubResource("SpriteFrames_p25e8")
+autoplay = "default"
+frame_progress = 0.177294

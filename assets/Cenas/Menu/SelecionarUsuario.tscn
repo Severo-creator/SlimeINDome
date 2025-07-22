@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwfy2pt8mernf"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Menus/SelecionarSlime.gd" id="1_34gpu"]
+
+[node name="SelecionarUsuario" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34gpu")
+
+[node name="Guerreiro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 123.0
+offset_right = 97.0
+offset_bottom = 164.0
+text = "	Guerreiro"
+
+[node name="Ranger" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 123.0
+offset_right = 212.0
+offset_bottom = 164.0
+text = "	Ranger"
+
+[node name="Mago" type="Button" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 122.0
+offset_right = 301.0
+offset_bottom = 163.0
+text = "Mago
+"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 52.0
+offset_right = 109.0
+offset_bottom = 93.0
+text = "Menu
+"
+
+[connection signal="pressed" from="Guerreiro" to="." method="_on_guerreiro_pressed"]
+[connection signal="pressed" from="Ranger" to="." method="_on_ranger_pressed"]
+[connection signal="pressed" from="Mago" to="." method="_on_mago_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wdy7iychs5rk"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Classes/Ranger/Skills/Salto/SaltoSkill.gd" id="1_nbnus"]
+
+[node name="SaltoSkill" type="Node2D"]
+script = ExtResource("1_nbnus")

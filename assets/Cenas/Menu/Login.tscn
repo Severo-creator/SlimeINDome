@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://c22b5orqoi6rn"]
+
+[ext_resource type="Script" path="res://assets/Scripts/LoginPlayer.gd" id="1_ctnh7"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ctnh7")
+
+[node name="UsernameInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 51.0
+offset_right = 176.063
+offset_bottom = 82.0
+
+[node name="PasswordInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 102.0
+offset_right = 175.063
+offset_bottom = 133.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 20.0
+offset_right = 167.0
+offset_bottom = 46.0
+text = "Email"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 80.0
+offset_right = 167.0
+offset_bottom = 106.0
+text = "Senha"
+
+[node name="FeedbackLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 34.0
+text = "Login"
+
+[node name="LoginButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 140.0
+offset_right = 119.0
+offset_bottom = 171.0
+text = "login"
+
+[node name="RegisterButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 139.0
+offset_right = 234.0
+offset_bottom = 170.0
+text = "Registrar
+"

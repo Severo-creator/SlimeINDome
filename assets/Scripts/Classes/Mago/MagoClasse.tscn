@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://i7au44t23inl"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Classes/Mago/MagoClasse.gd" id="1_takca"]
+[ext_resource type="Texture2D" uid="uid://c8o2ed54sk5vf" path="res://assets/Sprites autorais/Slimes/slime-sheet.png" id="2_86rrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yqq8"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shsue"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh12k"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf8d8"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx0s5"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ceql"]
+atlas = ExtResource("2_86rrl")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_du87y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yqq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shsue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh12k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf8d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx0s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ceql")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MagoClasse" type="Node2D"]
+script = ExtResource("1_takca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_du87y")
+autoplay = "default"

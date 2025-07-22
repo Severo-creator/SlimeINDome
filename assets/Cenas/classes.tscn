@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcm8wweieb2im"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Testes.gd" id="1_aidbw"]
+[ext_resource type="Texture2D" uid="uid://c45r1oqh63akd" path="res://assets/Sprite Pack 3/2 - Twiggy/Back_Turned (32 x 32).png" id="2_maqlj"]
+[ext_resource type="Script" path="res://assets/Scripts/PlayerController.gd" id="3_uopae"]
+[ext_resource type="Script" path="res://assets/Scripts/Classes/Guerreiro/GuerreiroClasse.gd" id="4_xgqi1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvhb4"]
+
+[node name="Classes" type="Node2D"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(27, 21)
+script = ExtResource("1_aidbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("CircleShape2D_hvhb4")
+
+[node name="BackTurned(32X32)" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(0, -2)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("2_maqlj")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_uopae")
+
+[node name="Node" type="Node" parent="Node"]
+script = ExtResource("4_xgqi1")

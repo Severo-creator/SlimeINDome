@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvs62q300ay4"]
+
+[ext_resource type="Texture2D" uid="uid://bgeco7ps3103m" path="res://assets/Scripts/Classes/Ranger/bow-sheet.png" id="1_ah2qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iind2"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g575r"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sagsr"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoqug"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0gip"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muhvu"]
+atlas = ExtResource("1_ah2qr")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdkvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iind2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g575r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sagsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoqug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0gip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muhvu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ArcoAni" type="AnimatedSprite2D"]
+scale = Vector2(0.474, 0.473)
+sprite_frames = SubResource("SpriteFrames_rdkvm")

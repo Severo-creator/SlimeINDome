@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d05oe4bsrko74"]
+
+[ext_resource type="Script" path="res://assets/Scripts/PlayerController.gd" id="1_87j8n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxcvn"]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qwx5t"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+
+[node name="Player" type="CharacterBody2D" groups=["slime"]]
+script = ExtResource("1_87j8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["slime"]]
+shape = SubResource("CapsuleShape2D_pxcvn")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qwx5t")

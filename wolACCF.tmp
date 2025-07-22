@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://ipgvva22dl0h"]
+
+[ext_resource type="Script" path="res://GuerreiroClasse.gd" id="1_ivhtk"]
+[ext_resource type="Script" path="res://Slime.gd" id="1_y3hu8"]
+[ext_resource type="Texture2D" uid="uid://dcscte5ns26e8" path="res://assets/Sprite Pack 3/4 - Tommy/Idle_Poses (32 x 32).png" id="2_570xv"]
+[ext_resource type="Script" path="res://Testes.gd" id="3_yaa1v"]
+[ext_resource type="Script" path="res://Skills.gd" id="4_uxi7d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3smf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0e2q"]
+atlas = ExtResource("2_570xv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68unb"]
+atlas = ExtResource("2_570xv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx7do"]
+atlas = ExtResource("2_570xv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd8gv"]
+atlas = ExtResource("2_570xv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ap30g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0e2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68unb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx7do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd8gv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Wolrd" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Slime" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ivhtk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime"]
+shape = SubResource("CapsuleShape2D_j3smf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Slime"]
+sprite_frames = SubResource("SpriteFrames_ap30g")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.227671
+
+[node name="Node" type="Node" parent="Slime"]
+script = ExtResource("3_yaa1v")
+
+[node name="Node2" type="Node" parent="Slime"]
+script = ExtResource("4_uxi7d")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_y3hu8")
+
+[node name="Node" type="Node" parent="Node"]
+script = ExtResource("1_ivhtk")
