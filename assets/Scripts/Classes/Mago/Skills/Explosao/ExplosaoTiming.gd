@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-var tempo_vida = 4
-var tick 
+
 
 func _ready():
-	tick = 0
+
+	await $AnimatedSprite2D.animation_finished
+	self.queue_free()
 
 
 func _physics_process(delta):
-	tick += 1
-	if tick >= tempo_vida:
-		self.queue_free()
+	

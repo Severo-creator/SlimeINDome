@@ -15,7 +15,7 @@ properties/0/watch = false
 [node name="Player" type="CharacterBody2D" groups=["slime"]]
 script = ExtResource("1_87j8n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["slime"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pxcvn")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

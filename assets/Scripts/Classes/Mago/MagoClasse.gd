@@ -38,14 +38,5 @@ func usar_skill_2(s, a):
 	if (skill_2 != null):
 		skill_2.fire(s, a)
 
-func usar_skill_3():
-	if (skill_3 != null):
-		skill_3.fire()
 
-	
-	
-
-	
-	
-	
 

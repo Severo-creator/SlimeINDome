@@ -46,13 +46,13 @@ func _physics_process(delta):
 			p.queue_free()
 			areas.erase(i)
 			pass
-		var collision = p.move_and_collide(Vector2.ZERO)
+		var collision = p.move_and_collide(Vector2(0.1, 0))
 		
 		if (collision):
 			var collider = collision.get_collider()
 			
-			if (collider.get_class() == "CharacterBody2D"):
-				print("Damage")
+			if collider.get_class() == "CharacterBody2D" and collider.is_in_group("slime"):
+				
 				collider.apply_damage(damage) 
 				
 			p.get_node("CollisionShape2D").disabled = true

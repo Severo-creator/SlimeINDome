@@ -53,7 +53,7 @@ func _physics_process(delta):
 		if (collision):
 			var collider = collision.get_collider()
 			
-			if (collider.get_class() == "CharacterBody2D"):
+			if collider.get_class() == "CharacterBody2D" and collider.is_in_group("slime"):
 				print("Damage")
 				collider.apply_damage(damage) 
 				

@@ -16,3 +16,6 @@ func damage(damage, idp):
 		print("Morte...")
 		var controller = get_node("/root/MainMenu")
 		controller.playerLose(multiplayer.get_unique_id())
+		
+func cura(cura , idp):
+	vidaAtual += cura

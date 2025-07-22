@@ -28,7 +28,7 @@ func _input(event):
 func Skill_1(pos):
 	NodeClass.usar_skill_1(self, pos)
 	
-@rpc("any_peer","call_local")
+@rpc("any_peer", "call_local")
 func Skill_2(pos):
 	NodeClass.usar_skill_2(self, pos)
 
@@ -82,3 +82,7 @@ func apply_damage(damage):
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		print("Dano playerController")
 		NodeClass.damage(damage, $MultiplayerSynchronizer.get_multiplayer_authority())
+		
+func curar(vida):
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+		NodeClass.cura(vida, $MultiplayerSynchronizer.get_multiplayer_authority())

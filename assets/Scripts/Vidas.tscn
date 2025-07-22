@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3frc5542hr8p"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Vidaextra.gd" id="1_wxeix"]
+[ext_resource type="Texture2D" uid="uid://cuwxl8ecg0bom" path="res://assets/Mini FX, Items & UI/Food Items/Pancake_Stack (16 x 16).png" id="2_rx5k6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w02yd"]
+size = Vector2(14, 10)
+
+[node name="Vidas" type="CharacterBody2D"]
+script = ExtResource("1_wxeix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_w02yd")
+
+[node name="PancakeStack(16X16)" type="Sprite2D" parent="."]
+texture = ExtResource("2_rx5k6")

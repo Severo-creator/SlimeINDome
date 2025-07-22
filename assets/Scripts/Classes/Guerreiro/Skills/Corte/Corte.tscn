@@ -55,6 +55,7 @@ animations = [{
 }]
 
 [node name="Corte" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dbppy")

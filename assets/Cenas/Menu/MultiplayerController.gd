@@ -116,9 +116,10 @@ func _on_join_pressed():
 
 @rpc("any_peer", "call_local")
 func player_ready(player_id: int):
-	var jogadores = rooms[room]
-	for p_id in jogadores:
-		ready_play.rpc_id(p_id, room, player_id)
+	if RoundData.Players.has(player_id):
+		var jogadores = rooms[room]
+		for p_id in jogadores:
+			ready_play.rpc_id(p_id, room, player_id)
 	
 	
 	
