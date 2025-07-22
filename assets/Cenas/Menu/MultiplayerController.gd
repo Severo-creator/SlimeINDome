@@ -11,9 +11,12 @@ var onselection_players: Array[int] = []
 var rooms = {} # Ex: { "sala1": [1, 5], "sala2": [3] }
 var max_players_per_room = 2
 var room
+@onready var line_edit = %LineEdit
+@onready var input_line = %inputchat
+@onready var chat_log = %TextEdit
 
-@onready var chat_log = $TextEdit
-@onready var input_line = $inputchat
+#@onready var chat_log = $TextEdit
+#@onready var input_line = $inputchat
 
 func _ready():
 	multiplayer.peer_connected.connect(peer_connected)
@@ -31,7 +34,7 @@ func peer_disconnected(id):
 	
 func connected_to_server():
 	print("	Connected to Server!")
-	SandPlayerInformation.rpc_id(1, $LineEdit.text, multiplayer.get_unique_id())
+	SandPlayerInformation.rpc_id(1, line_edit.text, multiplayer.get_unique_id())
 	send_chat_message.rpc("Conectado!", multiplayer.get_unique_id())
 	
 func connection_failed():
@@ -49,7 +52,7 @@ func Host_Down():
 	multiplayer.set_multiplayer_peer(peer)
 	print("Waiting for Players")
 	
-	SandPlayerInformation($LineEdit.text, multiplayer.get_unique_id())
+	SandPlayerInformation(line_edit.text, multiplayer.get_unique_id())
 
 func Join_Down():
 	peer = ENetMultiplayerPeer.new()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw5mi4uy8kirc"]
+[gd_scene load_steps=3 format=3 uid="uid://cw5mi4uy8kirc"]
 
+[ext_resource type="Theme" uid="uid://b6qrpj5c8om28" path="res://assets/Mini FX, Items & UI/menu_theme.tres" id="1_cy6mk"]
 [ext_resource type="Script" path="res://assets/Cenas/Menu/MultiplayerController.gd" id="2_wdrwi"]
 
 [node name="MainMenu" type="Control"]
@@ -9,73 +10,101 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_cy6mk")
 script = ExtResource("2_wdrwi")
 
-[node name="StartGame" type="Button" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 149.0
-offset_right = 101.0
-offset_bottom = 180.0
-text = "StartGame"
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.858824, 0.831373, 0.780392, 1)
 
-[node name="QuitiGame" type="Button" parent="."]
-layout_mode = 0
-offset_left = 111.0
-offset_top = 149.0
-offset_right = 198.0
-offset_bottom = 180.0
-text = "QuitGame
-"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Host" type="Button" parent="."]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 21.0
-offset_right = 138.0
-offset_bottom = 52.0
-text = "HOST"
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="JOIN" type="Button" parent="."]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 20.0
-offset_right = 75.0
-offset_bottom = 51.0
-text = "	JOIN"
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 60.0
-offset_right = 150.0
-offset_bottom = 91.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="inputchat" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 208.0
-offset_top = 92.0
-offset_right = 321.0
-offset_bottom = 123.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 89.0
-offset_right = 100.0
-offset_bottom = 115.0
-text = "Name"
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "username:"
 
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 211.0
-offset_top = 4.0
-offset_right = 318.0
-offset_bottom = 92.0
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Host" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "host"
+
+[node name="JOIN" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "join"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "START GAME"
+
+[node name="QuitiGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "quit"
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
 editable = false
+wrap_mode = 1
+scroll_smooth = true
 
-[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="QuitiGame" to="." method="_on_quiti_game_pressed"]
-[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="JOIN" to="." method="_on_join_pressed"]
-[connection signal="text_submitted" from="inputchat" to="." method="_on_inputchat_text_submitted"]
+[node name="inputchat" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "message"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/JOIN" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2/QuitiGame" to="." method="_on_quiti_game_pressed"]
+[connection signal="text_submitted" from="MarginContainer/HBoxContainer/VBoxContainer/inputchat" to="." method="_on_inputchat_text_submitted"]

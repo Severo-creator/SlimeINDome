@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c22b5orqoi6rn"]
+[gd_scene load_steps=3 format=3 uid="uid://c22b5orqoi6rn"]
 
 [ext_resource type="Script" path="res://assets/Scripts/LoginPlayer.gd" id="1_ctnh7"]
+[ext_resource type="Theme" uid="uid://b6qrpj5c8om28" path="res://assets/Mini FX, Items & UI/menu_theme.tres" id="1_l7f7d"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -9,59 +10,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_l7f7d")
 script = ExtResource("1_ctnh7")
 
-[node name="UsernameInput" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 51.0
-offset_right = 176.063
-offset_bottom = 82.0
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.858824, 0.831373, 0.780392, 1)
 
-[node name="PasswordInput" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 102.0
-offset_right = 175.063
-offset_bottom = 133.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = 20.0
-offset_right = 167.0
-offset_bottom = 46.0
-text = "Email"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 80.0
-offset_right = 167.0
-offset_bottom = 106.0
-text = "Senha"
-
-[node name="FeedbackLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 8.0
-offset_right = 88.0
-offset_bottom = 34.0
-text = "Login"
-
-[node name="LoginButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 140.0
-offset_right = 119.0
-offset_bottom = 171.0
+[node name="FeedbackLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "login"
+horizontal_alignment = 1
 
-[node name="RegisterButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 139.0
-offset_right = 234.0
-offset_bottom = 170.0
-text = "Registrar
-"
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "username:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="UsernameInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "password:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PasswordInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoginButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LOGIN"
+
+[node name="RegisterButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SIGN UP"

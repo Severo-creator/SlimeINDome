@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwfy2pt8mernf"]
+[gd_scene load_steps=3 format=3 uid="uid://cwfy2pt8mernf"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Menus/SelecionarSlime.gd" id="1_34gpu"]
+[ext_resource type="Theme" uid="uid://b6qrpj5c8om28" path="res://assets/Mini FX, Items & UI/menu_theme.tres" id="1_vb47j"]
 
 [node name="SelecionarUsuario" type="Control"]
 layout_mode = 3
@@ -9,43 +10,62 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vb47j")
 script = ExtResource("1_34gpu")
 
-[node name="Guerreiro" type="Button" parent="."]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 123.0
-offset_right = 97.0
-offset_bottom = 164.0
-text = "	Guerreiro"
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.858824, 0.831373, 0.780392, 1)
 
-[node name="Ranger" type="Button" parent="."]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 123.0
-offset_right = 212.0
-offset_bottom = 164.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Choose your slime's class:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Ranger" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "	Ranger"
 
-[node name="Mago" type="Button" parent="."]
-layout_mode = 0
-offset_left = 236.0
-offset_top = 122.0
-offset_right = 301.0
-offset_bottom = 163.0
-text = "Mago
-"
+[node name="Guerreiro" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Warrior"
 
-[node name="Menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 52.0
-offset_right = 109.0
-offset_bottom = 93.0
-text = "Menu
-"
+[node name="Mago" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wizard"
 
-[connection signal="pressed" from="Guerreiro" to="." method="_on_guerreiro_pressed"]
-[connection signal="pressed" from="Ranger" to="." method="_on_ranger_pressed"]
-[connection signal="pressed" from="Mago" to="." method="_on_mago_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "return to previous menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Ranger" to="." method="_on_ranger_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Guerreiro" to="." method="_on_guerreiro_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Mago" to="." method="_on_mago_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
