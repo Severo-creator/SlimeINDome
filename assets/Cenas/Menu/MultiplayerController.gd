@@ -6,10 +6,10 @@ extends Control
 var peer
 
 var ready_players: Array[int] = []
-var onselection_players: Array[int] = []
+
 
 var rooms = {} # Ex: { "sala1": [1, 5], "sala2": [3] }
-var max_players_per_room = 2
+@export var max_players_per_room = 2
 var room
 @onready var line_edit = %LineEdit
 @onready var input_line = %inputchat
@@ -133,7 +133,7 @@ func ready_play(sala: String, player_id: int):
 	print("Player ", player_id, " está pronto ", ready_players.size())
 	
 	
-	if ready_players.size() >= Room_size(room):
+	if ready_players.size() >= rooms[sala].size():
 		Arena()
 		ready_players.clear()
 	
@@ -226,8 +226,14 @@ func endgame():
 	var arena = get_node("/root/Arena")
 	arena.queue_free()
 	RoundData.Players = {}
-	rooms.erase(room)
+	ereaseRoom.rpc(room)
+	room = ""
+	ready_players.clear()
 	self.show()
+
+@rpc("any_peer", "call_local")
+func ereaseRoom(room):
+	rooms.erase(room)
 
 
 @rpc("call_local")
