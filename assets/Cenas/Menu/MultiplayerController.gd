@@ -90,7 +90,8 @@ func SandPlayerInformation(name, id):
 
 
 func _on_start_game_pressed():
-	Start_Game(multiplayer.get_unique_id())
+	if DataPlayers.Players.size() > 0:
+		Start_Game(multiplayer.get_unique_id())
 	pass # Replace with function body.
 
 
